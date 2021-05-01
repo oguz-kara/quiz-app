@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quiz-container {
+  padding: 1rem 2rem;
+  width: 500px;
+  min-height: 400px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-family: "Lato", sans-serif;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  max-height: 350px;
+  margin: 10px 0 0 10px;
+}
+
+.quiz-answers ol {
+  list-style-type: upper-alpha;
+}
+
+.quiz-answers ol li {
+  padding-bottom: 0.5rem;
+}
+
+.quiz-container .quiz-header {
+}
+.quiz-container .quiz-header p {
+  letter-spacing: 0.9px;
+  font-weight: 400;
+}
+
+.quiz-container .quiz-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz-container .quiz-actions .indicator {
+  font-size: 0.7rem;
+}
+
+.quiz-container .quiz-actions button {
+  padding: 0.3rem 1.2rem;
+  border-radius: 0.8rem;
+  border: none;
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  transition: background-color 200ms ease-in-out;
+  outline: none;
+}
+
+.quiz-container .quiz-actions button.next-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 100ms ease-in-out;
+}
+.quiz-container .quiz-actions button.next-btn span {
+  display: flex;
+  margin-left: 5px;
+}
+
+.fa-arrow-circle-right {
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1300ms;
+  animation-name: sallan;
+}
+
+.quiz-container .quiz-actions button.prev-btn {
+}
+
+.finish-btn {
+  background-color: #008000;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* hovers */
+.quiz-container .quiz-actions button.next-btn:hover {
+  background-color: #008000;
+  color: #ffffff;
+}
+.quiz-container .quiz-actions button.finish-btn:hover {
+  width: 110%;
+  height: 110%;
+}
+
+.quiz-container .quiz-actions button.prev-btn:hover {
+  background-color: #800000;
+  color: #ffffff;
+}
+
+.counter {
+  position: absolute;
+  top: calc(50% - 48px);
+  left: calc(50% - 23.2px);
+
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: "Bungee", cursive;
+
+  animation-name: grow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+
+  display: none;
+}
+
+.pinfo {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.exam-result {
+  position: absolute;
+  top: calc(50% - 38.5px);
+  left: calc(50% - 37px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.exam-result p {
+  font-size: 20px;
+}
+
+.exam-result div {
+  font-size: 64px;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.purple {
+  color: rebeccapurple;
+}
+
+/* animation keyframes */
+
+@keyframes sallan {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(2, 2);
+  }
+}
